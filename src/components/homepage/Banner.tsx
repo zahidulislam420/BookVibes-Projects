@@ -1,21 +1,25 @@
 import Image from 'next/image';
 import React from 'react';
-import bannerImg from '@/assets/hero_img.jpg'
+import bannerImg from '@/assets/hero_img.jpg';
+import Link from 'next/link';
 
 const Banner = () => {
     return (
-        <section className='py-20'>
-        <div className='container mx-auto grid grid-cols-2 gap-4 items-center bg-slate-300 rounded-4xl p-4'>
-            <div className='space-y-4'>
-               <h2 className='font-bold text-5xl'>
-                Books to freshen up <br/> your bookshelf
-                </h2>
-               <button className='btn btn-success'>View the task</button>
+        <section className="site-container banner-section">
+          <div className="banner-panel">
+            <div className="banner-copy">
+              <h1>Books to freshen up your bookshelf</h1>
+              <Link className="primary-button" href="/books">
+                View the list
+              </Link>
             </div>
-            <div>
-               <Image src={bannerImg} alt='Banner'/>
-            </div>
-        </div>
+            <Image
+              className="banner-image"
+              src={bannerImg}
+              alt="A selection of books for your bookshelf"
+              priority
+            />
+          </div>
         </section>
     );
 };
